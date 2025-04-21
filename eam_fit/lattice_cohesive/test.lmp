@@ -1,0 +1,39 @@
+
+# This input script is used to calculate
+# the lattice constant of HEA
+# Powered by Hyj
+clear
+units           metal
+boundary        p p p
+atom_style      atomic
+neigh_modify    every 1 delay 0 check yes
+timestep    0.001
+
+variable ini_lat equal 3.03
+variable rep equal 4
+# build the model
+lattice       bcc ${ini_lat}
+region        box block 0 ${rep} 0 ${rep} 0 ${rep}
+create_box    1 box         
+create_atoms  1 box
+
+#设置势函数的相关参数
+pair_style     eam/alloy
+pair_coeff     * * ../V.eam.alloy V    
+
+thermo      100
+thermo_style custom step temp etotal press cpu
+
+fix 1 all box/relax iso 0.0 vmax 0.001
+min_style cg
+minimize 1e-10 1e-10 50000 50000
+unfix 1
+
+variable lat equal lx/${rep}
+variable coh equal -pe/count(all)
+# print "Lattice constant is ${lat} ang." screen yes
+# print "Cohesive energy is ${coh} ev." screen yes
+# write_data watch.lmp 
+
+# 晶格常数: 3.0300 A
+# 内聚能: 5.31 ev

@@ -1,0 +1,56 @@
+&targetvalue
+lat = "bcc"         ! 晶格类型
+a0 = 3.03D0         ! 晶格常数, 单位为埃
+Ec = 5.31D0         ! 平均内聚能, 单位为ev
+Efv = 2.1D0         ! 缺陷形成能, 单位为ev
+C11 = 232.4D0       ! 弹性常数C11, 单位为GPa
+C12 = 119.36D0      ! 弹性常数C12, 单位为GPa
+C44 = 45.95D0       ! 弹性常数C44, 单位为GPa
+Bulk = 157.0d0      ! 体积模量, 单位为GPa
+/
+
+&eamparameter
+re = 2.594662D0
+fe = 2.523567D0
+rou_e = 27.724393D0
+rou_s = 27.724393D0
+alpha = 7.515860D0
+beta = 4.908879D0
+A = 0.631438D0
+B = 0.886485D0
+cai = 0.185170D0
+lamda = 0.419307D0
+Fn0 = -1.0d0
+Fn1 = -1.0d0
+Fn2 = 1.0d0
+Fn3 = -1.0d0
+F0 = -3.380243D0
+F1 = 0.000000D0
+F2 = 1.242722D0
+F3 = 0.134111D0
+eta = 0.635059D0
+F_e = -3.365898D0
+/
+
+&bound
+re_bound = 0.0d0, 5.0d0       ! re参数的取值上下限
+fe_bound = 0.0d0, 5.0d0        ! fe参数的取值上下限
+rou_e_bound = 0.0d0, 50.0d0    ! rou_e参数的取值上下限
+rou_s_bound = 0.0d0, 50.0d0    ! rou_s参数的取值上下限
+alpha_bound = 0.0d0, 10.0d0    ! alpha参数的取值上下限
+beta_bound = 0.0d0, 10.0       ! beta参数的取值上下限
+A_bound =0.0d0, 1.0d0          ! A参数的取值上下限
+B_bound = 0.0d0, 1.0d0         ! B参数的取值上下限
+cai_bound = 0.0d0, 1.0d0       ! cai参数的取值上下限
+lamda_bound = 0.0d0, 1.0d0     ! lamda参数的取值上下限
+Fn0_bound = -5.0d0, 0.0d0      ! Fn0参数的取值上下限
+Fn1_bound = -2.0d0, 0.0d0      ! Fn1参数的取值上下限
+Fn2_bound = 0.0d0, 2.0d0       ! Fn2参数的取值上下限
+Fn3_bound = -5.0d0, 0.0d0      ! Fn3参数的取值上下限
+F0_bound = -6.0d0, 0.0d0       ! F0参数的取值上下限
+F1_bound = 0.0d0, 0.0d0        ! F1参数的取值上下限
+F2_bound = 0.0d0, 3.5d0        ! F2参数的取值上下限
+F3_bound = -3.0d0, 1.0d0       ! F3参数的取值上下限
+eta_bound = -1.0d0, 2.0d0      ! eta参数的取值上下限
+F_e_bound = -5.0d0, 0.0d0      ! F_e参数的取值上下限
+/
